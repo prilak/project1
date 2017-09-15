@@ -2,8 +2,9 @@ import java.util.Scanner;
 import java.util.*;
 
 public class HelloWorld {			
+		private static final int CHAR_TO_INT = 96;
 
-	static Scanner userInput = new Scanner(System.in);
+		static Scanner userInput = new Scanner(System.in);
 
     public static void main(String[] args) {
         // Prints "Hello, World" to the terminal window.
@@ -14,8 +15,12 @@ public class HelloWorld {
 
         System.out.println("Enter a String of numbers: ");
 				String numString = userInput.nextLine();
-		
+				
+				System.out.println("Enter a String of words");
+				String words = userInput.nextLine();
+
         largestProduct(numAdjacent, numString);
+        oneDollarWords(words);
         //System.out.println("Hello, World");
     }
 
@@ -56,7 +61,33 @@ public class HelloWorld {
     	return productMax;
 
     }
-
+    private static boolean isPartWord(char value) {
+    	return Character.isLetter(value) || value == '\'';
+    }
+		//private static
+		private static void oneDollarWords(String paragraph) {
+			for(int i = 0; i < paragraph.length(); i++) {
+				int startI = i;
+				int endI = startI;
+				int sum = 0;
+				//ArrayList<char> word = new ArrayList<char>();
+				while (i < paragraph.length() && isPartWord(paragraph.charAt(i))) { // loops through each word
+					char value = paragraph.charAt(i);
+					if(Character.isLetter(value)) {
+						char lowerCase = Character.toLowerCase(value);
+						int numValue = (int) lowerCase - CHAR_TO_INT;
+						sum += numValue;
+					}
+					endI++;
+					i++;
+				}
+				// System.out.println(sum);
+				// System.out.println(paragraph.substring(startI, endI));
+				if (sum == 100) {
+					System.out.println(paragraph.substring(startI, endI));
+				}
+			}
+		}
 }
-
+	
 
