@@ -1,3 +1,4 @@
+package assignment1;
 // Ask whether or not main needs to be the function or some
 // other name following input parameters
 
@@ -5,11 +6,17 @@
 
 
 import java.util.*;
-public class HelloWorld {
+public class Problem2 {
 	private static final int CHAR_TO_INT = 96;
-
+	
 	static Scanner userInput = new Scanner(System.in);
-
+	
+	public static void main(String[] args) {
+		// System.out.println("Enter a String of words");
+		String words = userInput.nextLine();
+		oneDollarWords(words);
+	}
+	
 	private static boolean isPartWord(char value) {
     	return Character.isLetter(value) || value == '\'';
     }

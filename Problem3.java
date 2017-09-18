@@ -1,3 +1,4 @@
+package assignment1;
 import java.io.IOException;
 import java.util.*;
 
@@ -11,7 +12,7 @@ public class Problem3 {
         // Initialize the tagger
         MaxentTagger tagger = new MaxentTagger("taggers/proj.tagger");
         
-        System.out.print("Enter a String to be tagged: ");
+        //System.out.print("Enter a String to be tagged: ");
         // The sample string
         String sample = userInput.nextLine();
  
