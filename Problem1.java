@@ -1,4 +1,9 @@
 package assignment1;
+
+
+// At most n
+
+
 import java.util.Scanner;
 import java.util.*;
 
@@ -26,10 +31,12 @@ public class Problem1 {
     }
 
 
-		private static int product(int[] queue, int size) {
-			int result = queue[0];
+		private static long product(int[] queue, int size) {
+			long result = queue[0];
 			for (int i = 1; i < size; i++) { // finds the prodct of a queue of ints
-				result *= queue[i];
+				if (queue[i]!=0) {
+					result *= queue[i];
+				}
 			}
 			return result;
 		}
@@ -48,8 +55,8 @@ public class Problem1 {
 		}
 
 
-    private static int largestProduct(int numAdjacent, String numString) {
-    	int productMax = 0;
+    private static long largestProduct(int numAdjacent, String numString) {
+    	long productMax = 0;
     	//System.out.println(numAdjacent + ", " + numString);
     	int[] queue = new int[numAdjacent];
     	//System.out.println(intQueue[0]);
@@ -60,7 +67,7 @@ public class Problem1 {
 			for (int i = 0; i < numString.length(); i++) {
 				char value = numString.charAt(i); //Integer.parseInt(numString[i]);
 				queue[0] = Character.getNumericValue(value);
-				int product = product(queue, numAdjacent);
+				long product = product(queue, numAdjacent);
 				if(product > productMax) {
 					
 					productMax = product;

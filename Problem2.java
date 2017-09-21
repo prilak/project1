@@ -1,7 +1,7 @@
 package assignment1;
 // Ask whether or not main needs to be the function or some
 // other name following input parameters
-
+// check .
 
 
 
