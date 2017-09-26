@@ -1,3 +1,5 @@
+ /* Student Name: Michael Lawrence,  Lab Section: T 2-3:30 */
+
 package assignment1;
 import java.io.IOException;
 import java.util.*;

@@ -1,8 +1,6 @@
-package assignment1;
-// Ask whether or not main needs to be the function or some
-// other name following input parameters
-// check .
+ /* Student Name: Michael Lawrence,  Lab Section: T 2-3:30 */
 
+package assignment1;
 
 
 import java.util.*;
@@ -21,13 +19,13 @@ public class Problem2 {
     	return Character.isLetter(value) || value == '\'';
     }
 	
-		//private static
+		
 	private static void oneDollarWords(String paragraph) {
 		for(int i = 0; i < paragraph.length(); i++) {
 			int startI = i;
 			int endI = startI;
 			int sum = 0;
-			//ArrayList<char> word = new ArrayList<char>();
+		
 			while (i < paragraph.length() && isPartWord(paragraph.charAt(i))) { // loops through each word
 				char value = paragraph.charAt(i);
 				if(Character.isLetter(value)) {
@@ -38,8 +36,7 @@ public class Problem2 {
 				endI++;
 				i++;
 			}
-			// System.out.println(sum);
-			// System.out.println(paragraph.substring(startI, endI));
+			
 			if (sum == 100) {
 				System.out.println(paragraph.substring(startI, endI));
 			}
